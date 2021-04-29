@@ -5,10 +5,15 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import "../styles/repositories.scss";
 
+interface Repository{
+    name:string;
+    description:string;
+    html_url:string
+}
 
 // https://api.github.com/orgs/rocketseat/repos
 
-// const repository = {                     // todas as informaçãoes de um depositorio em um unico objeto
+// const repository = {                     // todas as informaçãoes de um repositorio em um unico objeto
 
 //     name:"unform2",
 //     descricao:"forms in React",
@@ -17,7 +22,7 @@ import "../styles/repositories.scss";
 // }
 export function RepositoryList() {
 
-    const [repositorios,setRepositorios]= useState([])  // como é uma lista vazia se inicia a com o vetor vazio [] para iniciar o estado
+    const [repositorios,setRepositorios]= useState<Repository[]>([])  // como é uma lista vazia se inicia a com o vetor vazio [] para iniciar o estado
    
    useEffect(()=>{
        fetch('https://api.github.com/orgs/rocketseat/repos')

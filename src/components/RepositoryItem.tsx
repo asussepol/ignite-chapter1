@@ -1,5 +1,5 @@
 interface  RepositoryItemProps {
-    repository:{
+    repository:{                            ///propriedade repository
         name:string;
         description:string;
         html_url:string;
